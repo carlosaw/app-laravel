@@ -4,9 +4,7 @@
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone https://github.com/carlosaw/app-laravel.git
-
-app-laravel
+git clone https://github.com/carlosaw/app-laravel.git app-laravel
 ```
 ```sh
 cd app-laravel
