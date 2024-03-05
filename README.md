@@ -4,7 +4,7 @@
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone -b laravel-10-com-php-8.1 https://github.com/carlosaw/app-laravel.git
+git clone https://github.com/carlosaw/app-laravel.git
 
 app-laravel
 ```
