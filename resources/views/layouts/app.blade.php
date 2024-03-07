@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@yield('title') - Aw2Web</title>
-
-  <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/jpg" />
+  {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ URL::to('assets/images/favicon.ico') }}"/> --}}
+  <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
   <script src="{{ asset('https://cdn.tailwindcss.com') }}"></script>
 </head>
 <body class="bg-gray-50">

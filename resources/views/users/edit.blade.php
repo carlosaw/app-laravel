@@ -2,7 +2,6 @@
 @section('title', "Editar Usuário")
 @section('content')
 
-
     @include('includes.validations-form')
 
     <form action="{{ route('users.update', $user->id) }}" method="post">
