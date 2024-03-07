@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', "Editar Usuário")
 @section('content')
-    <h1>Editar Usuário {{ $user->name }}</h1>
+
 
     @include('includes.validations-form')
 
