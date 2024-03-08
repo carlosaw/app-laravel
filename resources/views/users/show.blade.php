@@ -15,9 +15,6 @@
             <div class="flex justify-between">
             <button class="bg-red-500 text-white px-20 py-1 rounded-md hover:opacity-75"
             onclick="return confirm(`Tem certeza? Excluir?`)" type="submit">Excluir</button>
-            <x-btnBack>
-                <a href="{{ route('users.index') }}">{{ route('users.index') ? 'Voltar' : ''}}</a>
-            </x-btnBack>
         </div>
         </form>
     </div>

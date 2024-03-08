@@ -3,13 +3,12 @@
 @section('content')
 
 
-<h1 class="text-2xl font-semibol leading-tigh py-2">Listagem dos Usuários
+<h1 class="text-2xl font-semibol leading-tigh py-2">Listagem dos Usuários</h1>
 
-</h1>
 <div class="w-full flex justify-between items-center">
     <form action="{{ route('users.index') }}" method="get">
-    <input type="text" name="search" placeholder="Nome ou E-mail" class="bg-gray-200 appearance-none px-2 py-1 mt-4 mb-4" />
-    <button class="bg-purple-500 hover:bg-purple-400 text-white px-2 py-1 rounded-md">Pesquisar</button>
+        <input type="text" name="search" placeholder="Nome ou E-mail" class="bg-gray-200 appearance-none px-2 py-1 mt-4 mb-4" />
+        <button class="bg-purple-500 hover:bg-purple-400 text-white px-2 py-1 rounded-md">Pesquisar</button>
     </form>
     <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-400 text-white px-2 py-1 rounded-md"> + Usuário</a>
 </div>
