@@ -11,7 +11,7 @@
     <input type="text" name="search" placeholder="Nome ou E-mail" class="bg-gray-200 appearance-none px-2 py-1 mt-4 mb-4" />
     <button class="bg-purple-500 hover:bg-purple-400 text-white px-2 py-1 rounded-md">Pesquisar</button>
     </form>
-    <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-400 text-white px-2 py-1 rounded-md">Add Usuário</a>
+    <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-400 text-white px-2 py-1 rounded-md"> + Usuário</a>
 </div>
 
 <table class="min-w-full leading-normal shadow-md rounded-lg overflow-hidden mt-4">

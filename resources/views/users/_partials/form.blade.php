@@ -11,13 +11,14 @@
     <input class="rounded-md py-2 px-3 outline-none text-lg border border-gray-300" type="text" name="name" placeholder="Nome:" value="{{ $user->name ?? old('name') }}" autofocus />
     <input class="rounded-md py-2 px-3 outline-none text-lg border border-gray-300" type="email" name="email" placeholder="E-mail:" value="{{ $user->email ?? old('email') }}" />
     <input class="rounded-md py-2 px-3 outline-none text-lg border border-gray-300" type="password" name="password" placeholder="Senha:" />
-    <div class="flex justify-center items-center">
-        {{-- <button class="w-full bg-blue-500 text-center py-2 text-xl text-white rounded-md hover:opacity-75" type="submit">
-             Enviar
-        </button> --}}
+    <div class="flex justify-between items-center">
+        <x-btnBack>
+            <a href="{{ route('users.index') }}">{{ route('users.index') ? 'Voltar' : ''}}</a>
+        </x-btnBack>
+
         <x-btn>
             @if(isset($user))
-            {{ route('users.edit', $user->id) ? 'Salvar' : ''}}
+                {{ route('users.edit', $user->id) ? 'Salvar' : ''}}
             @else
                 {{ route('users.create') ? 'Cadastrar' : ''}}
             @endif
