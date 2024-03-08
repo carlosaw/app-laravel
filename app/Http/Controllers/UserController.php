@@ -9,9 +9,16 @@ use App\Http\Requests\StoreUpdateUserFormRequest;
 class UserController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::get();
+        //dd($request->search);
+        $search = $request->search;
+        $users = User::where(function ($query) use ($search) {
+            if($search) {
+                $query->where('email', $search);
+                $query->orWhere('name', 'LIKE', "%{$search}%");
+            }
+        })->get();
         //dd($users);
         //dd('UserController@index');
         return view('users.index', compact('users'));
@@ -38,6 +45,7 @@ class UserController extends Controller
 
         return redirect()->route('users.index', $user);
     }
+
     public function edit($id) {
         if(!$user = User::find($id))
             return redirect()->route('users.index');
