@@ -8,4 +8,5 @@
         @method('PUT')
         @include('users._partials.form')
     </form>
+
 @endsection
