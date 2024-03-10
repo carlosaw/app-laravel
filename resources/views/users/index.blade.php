@@ -2,7 +2,6 @@
 @section('title', 'Listagem dos Usuários')
 @section('content')
 
-
 <h1 class="text-2xl font-semibol leading-tigh py-2">Listagem dos Usuários</h1>
 
 <div class="w-full flex justify-between items-center">
@@ -20,6 +19,7 @@
       <th class="px-3 py-3 border-b-2 border-gray-200 bg-gray-100 text-left">E-mail</th>
       <th class="px-3 py-3 border-b-2 border-gray-200 bg-gray-100 text-left">Editar</th>
       <th class="px-3 py-3 border-b-2 border-gray-200 bg-gray-100 text-left ">Detalhes</th>
+      <th class="px-3 py-3 border-b-2 border-gray-200 bg-gray-100 text-left ">Comentários</th>
     </tr>
   </thead>
 
@@ -36,6 +36,14 @@
       <td class="border-b border-b-2 border-gray-300 px-2">
         <a href="{{ route('users.show', $user->id) }}">
           <img src="{{ asset('assets/images/details.png') }}" class="ml-4 hover:w-7" alt="details" width="25" />
+        </a>
+      </td>
+      <td class="border-b border-b-2 border-gray-300 px-2">
+        <a href="{{ route('comments.index', $user->id) }}" class="flex justify-start">
+            <img src="{{ asset('assets/images/text.png') }}" class="ml-2 mr-8 hover:w-7 " alt="details" width="25" />
+            <div class="w-7 h-7 text-white bg-blue-500 font-bold rounded-full px-2 flex justify-center items-center">
+                45
+            </div>
         </a>
       </td>
     </tr>

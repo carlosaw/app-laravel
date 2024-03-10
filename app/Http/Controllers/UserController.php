@@ -8,6 +8,13 @@ use App\Http\Requests\StoreUpdateUserFormRequest;
 
 class UserController extends Controller
 {
+    protected $model;
+
+    public function __construct(User $user)
+    {
+        $this->model = $user;
+    }
+
     //
     public function index(Request $request)
     {
@@ -23,6 +30,7 @@ class UserController extends Controller
         //dd('UserController@index');
         return view('users.index', compact('users'));
     }
+
     public function show($id)
     {
         //$user = User::where('id', $id)->first();
