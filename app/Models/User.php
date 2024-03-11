@@ -51,6 +51,7 @@ class User extends Authenticatable
             }
         })->get();
 
+
         return $users;
     }
 

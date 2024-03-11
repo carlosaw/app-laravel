@@ -39,5 +39,9 @@
   </tbody>
 
 </table>
-
+<div class="py-4 bg-white">
+    {{ $comments->appends([
+            'search' => request()->get('search', '')
+        ])->links() }}
+</div>
 @endsection

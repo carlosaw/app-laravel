@@ -28,7 +28,7 @@ class CommentController extends Controller
         //dd($request->search);
         $comments = $user->comments()
         ->where('body', 'LIKE', "%{$request->search}%")
-        ->get();
+        ->paginate(1);
 
         return view('users.comments.index', compact('user', 'comments'));
     }

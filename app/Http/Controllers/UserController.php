@@ -25,7 +25,7 @@ class UserController extends Controller
                 $query->where('email', $search);
                 $query->orWhere('name', 'LIKE', "%{$search}%");
             }
-        })->get();
+        })->with('comments')->paginate(15);
         //dd($users);
         //dd('UserController@index');
         return view('users.index', compact('users'));

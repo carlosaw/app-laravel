@@ -42,7 +42,7 @@
         <a href="{{ route('comments.index', $user->id) }}" class="flex justify-start">
             <img src="{{ asset('assets/images/text.png') }}" class="ml-2 mr-8 hover:w-7 " alt="details" width="25" />
             <div class="w-7 h-7 text-white bg-blue-500 font-bold rounded-full px-2 flex justify-center items-center">
-                45
+                {{ $user->comments->count() }}
             </div>
         </a>
       </td>
@@ -51,5 +51,11 @@
   </tbody>
 
 </table>
+
+<div class="py-4">
+    {{ $users->appends([
+            'search' => request()->get('search', '')
+        ])->links() }}
+</div>
 
 @endsection
