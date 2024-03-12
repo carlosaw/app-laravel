@@ -26,7 +26,18 @@
   <tbody>
     @foreach ($users as $user)
     <tr class="bg-white hover:bg-gray-100">
-      <td class="border-b border-b-2 border-gray-300 p-2">{{ $user->name }}</td>
+      <td class="border-b border-b-2 border-gray-300 p-2"
+      <div class="rounded-lg bg-red-300">
+        @if ($user->image)
+            <img src="{{ url("storage/{$user->image}") }}" alt="{{ $user->name }}" class="object-cover w-8"/>
+        @else
+
+            <img src="{{ url("assets/images/default-user-icon-13.jpg") }}" alt="{{ $user->image }}" class="object-cover w-8" />
+
+        @endif
+
+
+    </td>
       <td class="border-b border-b-2 border-gray-300 p-2">{{ $user->email }}</td>
       <td class="border-b border-b-2 border-gray-300 px-2">
         <a href="{{ route('users.edit', $user->id) }}">
