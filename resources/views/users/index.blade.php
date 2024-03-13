@@ -27,15 +27,16 @@
   <tbody>
     @foreach ($users as $user)
     <tr class="bg-white hover:bg-gray-100">
-      <td class="border-b border-b-2 border-gray-300 p-2">
-        <div class="flex items-center">
-            @if ($user->image)
-                <img src="{{ url("storage/{$user->image}") }}" alt="{{ $user->name }}" class="object-cover w-8 mr-4"/>{{ $user->name }}
-            @else
-                <img src="{{ url("assets/images/default-user-icon-13.jpg") }}" alt="{{ $user->image }}" class="object-cover w-8" />
-            @endif
-        </div>
-    </td>
+        <td class="px-2 border-b border-gray-300text-md">
+            <div class="flex items-center">
+                @if ($user->image)
+                    <img src="{{ url("storage/{$user->image}") }}" alt="{{$user->name}}" class="object-cover w-8 mr-4 rounded-lg" />
+                @else
+                    <img src="{{ url("assets/images/default-user-icon-13.jpg") }}" alt="" class="object-cover w-8 mr-4" />
+                @endif
+                {{ $user->name }}
+            </div>
+        </td>
 
     <td class="border-b border-b-2 border-gray-300 p-2">{{ $user->email }}</td>
 

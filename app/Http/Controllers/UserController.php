@@ -51,16 +51,13 @@ class UserController extends Controller
         $data['password'] = bcrypt($request->password);
 
         if ($request->image) {
+            //$data['image'] = $request->image->store('users');
             $data['image'] = $request->image->store('users');
-
-            /*getClientOriginalExtension === pega extensão original*/
-            /**$extension = $request->image->getClientOriginalExtension();
-            $data['image'] = $request->image->storeAs('users', now() . ".{$extension}"); */
         }
-
-        $user = User::create($data);
-
-        return redirect()->route('users.index', $user);
+        $this->model->create($data);
+        //dd($request->image);
+        //$user = User::create($data);
+        return redirect()->route('users.index');
     }
 
     public function edit($id) {
@@ -80,7 +77,7 @@ class UserController extends Controller
 
             if ($request->image) {
                 if ($user->image && Storage::exists($user->image)) {
-                   Storage::delete($user->image) ;
+                   Storage::delete($user->image);
                 }
                 $data['image'] = $request->image->store('users');
             }

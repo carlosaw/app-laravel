@@ -38,7 +38,7 @@ class StoreUpdateUserFormRequest extends FormRequest
             'image' => [
                 'nullable',
                 'image',
-                'max:1024',
+                'max:2048',
             ]
         ];
 
