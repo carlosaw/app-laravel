@@ -26,16 +26,16 @@
   <tbody>
     @foreach ($users as $user)
     <tr class="bg-white hover:bg-gray-100">
-      <td class="border-b border-b-2 border-gray-300 p-2"
-      <div class="rounded-lg bg-red-300">
+      <td class="border-b border-b-2 border-gray-300 p-2">
+      <div class="flex items-center">
         @if ($user->image)
-            <img src="{{ url("storage/{$user->image}") }}" alt="{{ $user->name }}" class="object-cover w-8"/>
+            <img src="{{ url("storage/{$user->image}") }}" alt="{{ $user->name }}" class="object-cover w-8 mr-4"/>{{ $user->name }}
         @else
 
             <img src="{{ url("assets/images/default-user-icon-13.jpg") }}" alt="{{ $user->image }}" class="object-cover w-8" />
 
         @endif
-
+      </div>
 
     </td>
       <td class="border-b border-b-2 border-gray-300 p-2">{{ $user->email }}</td>
@@ -49,13 +49,20 @@
           <img src="{{ asset('assets/images/details.png') }}" class="ml-4 hover:w-7" alt="details" width="25" />
         </a>
       </td>
+
       <td class="border-b border-b-2 border-gray-300 px-2">
-        <a href="{{ route('comments.index', $user->id) }}" class="flex justify-start">
-            <img src="{{ asset('assets/images/text.png') }}" class="ml-2 mr-8 hover:w-7 " alt="details" width="25" />
-            <div class="w-7 h-7 text-white bg-blue-500 font-bold rounded-full px-2 flex justify-center items-center">
-                {{ $user->comments->count() }}
+        <div class="w-full flex">
+            <div class="w-1/3">
+                <a href="{{ route('comments.index', $user->id) }}" class="flex justify-start">
+                    <img src="{{ asset('assets/images/text.png') }}" class="ml-2 mr-8 hover:w-7 " alt="details" width="25" />
+                </a>
             </div>
-        </a>
+            <div class="">
+                <div class="w-7 h-7 text-white bg-blue-500 font-bold rounded-full px-2 flex justify-center items-center">
+                    {{ $user->comments->count() }}
+                </div>
+            </div>
+        </div>
       </td>
     </tr>
     @endforeach
