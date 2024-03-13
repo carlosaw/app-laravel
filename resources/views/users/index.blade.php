@@ -9,7 +9,8 @@
         <input type="text" name="search" placeholder="Nome ou E-mail" class="bg-gray-200 appearance-none px-2 py-1 mt-4 mb-4" />
         <button class="bg-purple-500 hover:bg-purple-400 text-white px-2 py-1 rounded-md">Pesquisar</button>
     </form>
-    <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-400 text-white px-2 py-1 rounded-md"> + Usuário</a>
+    <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-400 text-white px-2 py-1 rounded-md"> + Usuário
+    </a>
 </div>
 
 <table class="min-w-full leading-normal shadow-md rounded-lg overflow-hidden mt-4">
@@ -27,43 +28,43 @@
     @foreach ($users as $user)
     <tr class="bg-white hover:bg-gray-100">
       <td class="border-b border-b-2 border-gray-300 p-2">
-      <div class="flex items-center">
-        @if ($user->image)
-            <img src="{{ url("storage/{$user->image}") }}" alt="{{ $user->name }}" class="object-cover w-8 mr-4"/>{{ $user->name }}
-        @else
-
-            <img src="{{ url("assets/images/default-user-icon-13.jpg") }}" alt="{{ $user->image }}" class="object-cover w-8" />
-
-        @endif
-      </div>
-
+        <div class="flex items-center">
+            @if ($user->image)
+                <img src="{{ url("storage/{$user->image}") }}" alt="{{ $user->name }}" class="object-cover w-8 mr-4"/>{{ $user->name }}
+            @else
+                <img src="{{ url("assets/images/default-user-icon-13.jpg") }}" alt="{{ $user->image }}" class="object-cover w-8" />
+            @endif
+        </div>
     </td>
-      <td class="border-b border-b-2 border-gray-300 p-2">{{ $user->email }}</td>
-      <td class="border-b border-b-2 border-gray-300 px-2">
-        <a href="{{ route('users.edit', $user->id) }}">
-          <img src="{{ asset('assets/images/edit.png') }}" class="ml-4 hover:w-7" alt="edit" width="25" />
-        </a>
-      </td>
-      <td class="border-b border-b-2 border-gray-300 px-2">
-        <a href="{{ route('users.show', $user->id) }}">
-          <img src="{{ asset('assets/images/details.png') }}" class="ml-4 hover:w-7" alt="details" width="25" />
-        </a>
-      </td>
 
-      <td class="border-b border-b-2 border-gray-300 px-2">
-        <div class="w-full flex">
-            <div class="w-1/3">
-                <a href="{{ route('comments.index', $user->id) }}" class="flex justify-start">
-                    <img src="{{ asset('assets/images/text.png') }}" class="ml-2 mr-8 hover:w-7 " alt="details" width="25" />
-                </a>
-            </div>
-            <div class="">
-                <div class="w-7 h-7 text-white bg-blue-500 font-bold rounded-full px-2 flex justify-center items-center">
-                    {{ $user->comments->count() }}
+    <td class="border-b border-b-2 border-gray-300 p-2">{{ $user->email }}</td>
+
+        <td class="border-b border-b-2 border-gray-300 px-2">
+            <a href="{{ route('users.edit', $user->id) }}">
+                <img src="{{ asset('assets/images/edit.png') }}" class="ml-4 hover:w-7" alt="edit" width="25" />
+            </a>
+        </td>
+
+        <td class="border-b border-b-2 border-gray-300 px-2">
+            <a href="{{ route('users.show', $user->id) }}">
+                <img src="{{ asset('assets/images/details.png') }}" class="ml-4 hover:w-7" alt="details" width="25" />
+            </a>
+        </td>
+
+        <td class="border-b border-b-2 border-gray-300 px-2">
+            <div class="w-full flex">
+                <div class="w-1/3">
+                    <a href="{{ route('comments.index', $user->id) }}" class="flex justify-start">
+                        <img src="{{ asset('assets/images/text.png') }}" class="ml-2 mr-8 hover:w-7 " alt="details" width="25" />
+                    </a>
+                </div>
+                <div class="">
+                    <div class="w-7 h-7 text-white bg-blue-500 font-bold rounded-full px-2 flex justify-center items-center">
+                        {{ $user->comments->count() }}
+                    </div>
                 </div>
             </div>
-        </div>
-      </td>
+        </td>
     </tr>
     @endforeach
   </tbody>
