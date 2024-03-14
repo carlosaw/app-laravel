@@ -27,9 +27,9 @@
   <tbody>
     @foreach ($comments as $comment)
     <tr class="bg-white hover:bg-gray-100">
-      <td class="border-b border-b-2 border-gray-300 p-2">{{ $comment->body }}</td>
-      <td class="border-b border-b-2 border-gray-300 pl-4">{{ $comment->visible ? '✔' : '❌' }}</td>
-      <td class="border-b border-b-2 border-gray-300 px-2">
+      <td class="border-b-2 border-gray-300 p-2">{{ $comment->body }}</td>
+      <td class="border-b-2 border-gray-300 pl-4">{{ $comment->visible ? '✔' : '❌' }}</td>
+      <td class="border-b-2 border-gray-300 px-2">
         <a href="{{ route('comments.edit', ['user' => $user->id, 'id' => $comment->id]) }}">
           <img src="{{ asset('assets/images/edit.png') }}" class="ml-4 hover:w-7" alt="edit" width="25" />
         </a>
