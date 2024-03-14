@@ -20,7 +20,7 @@
     <tr>
       <th class="px-2 py-3 border-b-2 border-gray-200 bg-gray-100 text-left">Conteúdo</th>
       <th class="px-2 py-3 border-b-2 border-gray-200 bg-gray-100 text-left">Visível</th>
-      <th class="px-2 py-3 border-b-2 border-gray-200 bg-gray-100 text-left">Editar</th>
+      <th class="px-2 py-3 border-b-2 border-gray-200 bg-gray-100 text-left">Editar Novo</th>
     </tr>
   </thead>
 
