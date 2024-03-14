@@ -9,7 +9,7 @@
         <input type="text" name="search" placeholder="Nome ou E-mail" class="bg-gray-200 appearance-none px-2 py-1 mt-4 mb-4" />
         <button class="bg-purple-500 hover:bg-purple-400 text-white px-2 py-1 rounded-md">Pesquisar</button>
     </form>
-    <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-400 text-white px-2 py-1 rounded-md"> + Usuário
+    <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-400 text-white px-2 py-1 rounded-md" title="Novo usuário"> + Usuário
     </a>
 </div>
 
@@ -27,7 +27,7 @@
   <tbody>
     @foreach ($users as $user)
     <tr class="bg-white hover:bg-gray-100">
-        <td class="px-2 border-b border-b-2 border-gray-300 p-2">
+        <td class="px-2 border-b-2 border-gray-300 p-2">
             <div class="flex items-center">
                 @if ($user->image)
                     <img src="{{ url("storage/{$user->image}") }}" alt="{{$user->name}}" class="object-cover w-8 mr-4 rounded-lg" />
@@ -38,25 +38,25 @@
             </div>
         </td>
 
-    <td class="border-b border-b-2 border-gray-300 p-2">{{ $user->email }}</td>
+    <td class="border-b-2 border-gray-300 p-2">{{ $user->email }}</td>
 
-        <td class="border-b border-b-2 border-gray-300 px-2">
+        <td class="border-b-2 border-gray-300 px-2">
             <a href="{{ route('users.edit', $user->id) }}">
-                <img src="{{ asset('assets/images/edit.png') }}" class="ml-4 hover:w-7" alt="edit" width="25" />
+                <img src="{{ asset('assets/images/edit.png') }}" class="ml-4 hover:w-7" alt="edit" width="25" title="Editar Usuário" />
             </a>
         </td>
 
-        <td class="border-b border-b-2 border-gray-300 px-2">
+        <td class="border-b-2 border-gray-300 px-2">
             <a href="{{ route('users.show', $user->id) }}">
-                <img src="{{ asset('assets/images/details.png') }}" class="ml-4 hover:w-7" alt="details" width="25" />
+                <img src="{{ asset('assets/images/details.png') }}" class="ml-4 hover:w-7" alt="details" width="25" title="Detalhes do Usuário"/>
             </a>
         </td>
 
-        <td class="border-b border-b-2 border-gray-300 px-2">
+        <td class="border-b-2 border-gray-300 px-2">
             <div class="w-full flex items-center">
                 <div class="w-1/3">
                     <a href="{{ route('comments.index', $user->id) }}" class="flex justify-start">
-                        <img src="{{ asset('assets/images/text.png') }}" class="ml-2 hover:w-7 " alt="details" width="25" />
+                        <img src="{{ asset('assets/images/text.png') }}" class="ml-2 hover:w-7 " alt="details" width="25" title="Comentários do Usuário"/>
                     </a>
                 </div>
                 <div class="flex-1 justify-center">
