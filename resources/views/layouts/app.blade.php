@@ -10,7 +10,16 @@
   <script src="{{ asset('https://cdn.tailwindcss.com') }}"></script>
 </head>
 <body class="bg-gray-50">
+
   <div class="container mx-auto px-4 py-8">
+    <form action="{{ route('logout') }}" method="POST">
+    @csrf
+    <div class="flex justify-end">
+        <button type="submit" class="hover:opacity-75">
+            <img src="{{asset('assets/images/logout.jpg')}}" alt="logout" width="30" title="Logout"/>
+        </button>
+    </div>
+    </form>
     @yield('content')
   </div>
 </body>

@@ -12,7 +12,7 @@
         <input type="text" name="search" placeholder="Nome ou E-mail" class="bg-gray-200 appearance-none px-2 py-1 mt-4 mb-4" />
         <button class="bg-purple-500 hover:bg-purple-400 text-white px-2 py-1 rounded-md">Pesquisar</button>
     </form>
-    <a href="{{ route('comments.create', $user->id) }}" class="bg-blue-500 hover:bg-blue-400 text-white px-2 py-1 rounded-md"> + Comentário</a>
+    <a href="{{ route('comments.create', $user->id) }}" class="bg-blue-500 hover:bg-blue-400 text-white px-2 py-1 rounded-md" title="Novo comentário"> + Comentário</a>
 </div>
 
 <table class="min-w-full leading-normal shadow-md rounded-lg overflow-hidden mt-4">
@@ -31,7 +31,7 @@
       <td class="border-b-2 border-gray-300 pl-4">{{ $comment->visible ? '✔' : '❌' }}</td>
       <td class="border-b-2 border-gray-300 px-2">
         <a href="{{ route('comments.edit', ['user' => $user->id, 'id' => $comment->id]) }}">
-          <img src="{{ asset('assets/images/edit.png') }}" class="ml-4 hover:w-7" alt="edit" width="25" />
+          <img src="{{ asset('assets/images/edit.png') }}" class="ml-4 hover:w-7" alt="edit" width="25" title="Editar comentário" />
         </a>
       </td>
     </tr>
