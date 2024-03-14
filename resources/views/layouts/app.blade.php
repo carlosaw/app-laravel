@@ -15,7 +15,7 @@
     <form action="{{ route('logout') }}" method="POST">
     @csrf
     <div class="flex justify-end">
-        <button type="submit" class="text-red px-2 py-1 hover:opacity-75">
+        <button type="submit" class="hover:opacity-75">
             <img src="{{asset('assets/images/logout.jpg')}}" alt="logout" width="30" title="Logout"/>
         </button>
     </div>
