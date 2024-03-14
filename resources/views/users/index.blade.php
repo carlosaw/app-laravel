@@ -27,7 +27,7 @@
   <tbody>
     @foreach ($users as $user)
     <tr class="bg-white hover:bg-gray-100">
-        <td class="px-2 border-b border-gray-300text-md">
+        <td class="px-2 border-b border-b-2 border-gray-300 p-2">
             <div class="flex items-center">
                 @if ($user->image)
                     <img src="{{ url("storage/{$user->image}") }}" alt="{{$user->name}}" class="object-cover w-8 mr-4 rounded-lg" />
@@ -53,15 +53,15 @@
         </td>
 
         <td class="border-b border-b-2 border-gray-300 px-2">
-            <div class="w-full flex">
+            <div class="w-full flex items-center">
                 <div class="w-1/3">
                     <a href="{{ route('comments.index', $user->id) }}" class="flex justify-start">
-                        <img src="{{ asset('assets/images/text.png') }}" class="ml-2 mr-8 hover:w-7 " alt="details" width="25" />
+                        <img src="{{ asset('assets/images/text.png') }}" class="ml-2 hover:w-7 " alt="details" width="25" />
                     </a>
                 </div>
-                <div class="">
-                    <div class="w-7 h-7 text-white bg-blue-500 font-bold rounded-full px-2 flex justify-center items-center">
-                        {{ $user->comments->count() }}
+                <div class="flex-1 justify-center">
+                    <div class="w-12 h-6 text-blue-900 rounded-full px-2 flex justify-center items-center border border-blue-600">
+                    {{ $user->comments->count() }}
                     </div>
                 </div>
             </div>
